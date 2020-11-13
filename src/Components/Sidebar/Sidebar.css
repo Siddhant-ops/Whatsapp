@@ -11,6 +11,17 @@
     border-right: 1px solid lightgray;
 }
 
+.sidebar__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar__info>h1 {
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
 .sidebar__headerRight {
     display: flex;
     align-items: center;

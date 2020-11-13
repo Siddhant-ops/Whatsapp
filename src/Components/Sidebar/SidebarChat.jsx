@@ -6,10 +6,23 @@ import "./SidebarChat.css";
 
 function SidebarChat({ addMewChat, id, name }) {
   const [seed, setSeed] = useState("");
+  const [messages, setMessages] = useState("");
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
+
+  useEffect(() => {
+    if (id) {
+      db.collection("rooms")
+        .doc(id)
+        .collection("messages")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
+    }
+  }, [id]);
 
   const createChat = () => {
     const roomName = prompt("Please Enter room Name for Chat : ");
@@ -28,7 +41,7 @@ function SidebarChat({ addMewChat, id, name }) {
         <div className="sidebarChat__info">
           {console.log(id)}
           <h2>{name}</h2>
-          <p>Last messgae....</p>
+          <p>{messages[0]?.message}.</p>
         </div>
       </div>
     </Link>

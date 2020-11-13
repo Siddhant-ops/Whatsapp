@@ -16,6 +16,7 @@
     align-items: center;
 }
 
+
 .login__card {
     min-height: 90vh;
     width: 15rem;
@@ -55,15 +56,15 @@
     font-size: 3.5rem;
 }
 
-.login__anonymous {
-    -webkit-text-stroke: 0.1vw #000;
-    color: #fff;
-}
-
 .login__Ano__Container {
     width: fit-content;
     padding-right: 50px;
     font-size: 1.32rem;
+}
+
+.login__anonymous {
+    -webkit-text-stroke: 0vw #000;
+    color: #fff;
 }
 
 .login__anonymous::before {
@@ -75,7 +76,7 @@
     -webkit-text-stroke: 0vw #000;
     border-right: 2px solid #01fe87;
     overflow: hidden;
-    animation: animate 6s linear infinite;
+    animation: animate 3.5s linear infinite;
 }
 
 @keyframes animate {
@@ -90,4 +91,18 @@
     90% {
         width: 100%;
     }
+}
+
+.login__please {
+    font-size: 1.3rem;
+}
+
+.signIn__Button {
+    margin-top: 50px;
+}
+
+.signIn__logo {
+    width: 18px;
+    height: 18px;
+    padding-right: 10px;
 }
